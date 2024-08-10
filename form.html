@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Ingrese un número</h1>
+    <form id="numberForm" onsubmit="return submitForm()">
+        <input type="number" id="numberInput" step="0.01" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        function submitForm() {
+            const number = document.getElementById('numberInput').value;
+            localStorage.setItem('number', number);
+            window.location.href = 'index.html';
+            return false;
+        }
+    </script>
+</body>
+</html>
