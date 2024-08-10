@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Contenido de TXT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contenido del Archivo TXT</h1>
+    <pre id="fileContent">Cargando...</pre>
+
+    <script>
+        async function fetchTextFile() {
+            const url = 'https://drive.google.com/uc?id=1YqXM1JOo1PI19TKgZce6-BSVfzVKg49d';
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Error al cargar el archivo: ' + response.statusText);
+            }
+            const text = await response.text();
+            document.getElementById('fileContent').textContent = text;
+        }
+
+        fetchTextFile().catch(error => {
+            document.getElementById('fileContent').textContent = 'Error al cargar el archivo: ' + error.message;
+        });
+    </script>
+</body>
+</html>
