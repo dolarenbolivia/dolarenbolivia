@@ -4,13 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Número Ingresado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #0d0d1a;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2em;
+            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+        #displayNumber {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+        }
+        .info {
+            text-align: center;
+            font-size: 1em;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .gif-container img {
+            max-width: 100%; /* Asegura que el GIF no exceda el ancho del contenedor */
+            height: auto; /* Mantiene la proporción */
+        }
+    </style>
 </head>
 <body>
-    <h1>Número ingresado</h1>
+    <h1>De acuerdo con el mercado paralelo el Dólar en Bolivia se encuentra en:</h1>
     <p id="displayNumber"></p>
+    <p class="info">Precio obtenido de los librecambistas, exchanges y mercado internacional, el precio se actualiza cada 12hrs</p>
+
+    <div class="gif-container">
+        <img src="https://i.pinimg.com/originals/a8/46/12/a84612ebdc71ec737ae9e329a6eeb69b.gif" alt="GIF de dinero"> <!-- Reemplaza este enlace por el GIF que deseas -->
+    </div>
+
     <script>
+        // Mostrar el número ingresado
         const number = localStorage.getItem('number');
-        document.getElementById('displayNumber').textContent = number ? `El número ingresado es: ${number}` : 'No se ha ingresado ningún número.';
+        document.getElementById('displayNumber').textContent = number ? `1 dólar es igual a Bs: ${number}` : 'No se tiene precio.';
     </script>
 </body>
 </html>
